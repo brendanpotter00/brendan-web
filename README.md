@@ -5,7 +5,6 @@ Welcome to my personal website repository! This project is a frontend-only, sing
 ## Overview
 
 This website serves as my digital portfolio where I share insights on software engineering, showcase my projects, and highlight my professional experience. The single-page layout features distinct sections, beginning with a dynamic landing page that includes:
-- A full-screen, looped video background (with a fallback black background when no video is active)
 - A central low-poly Earth model rendered with Three.js that fades in
 - A greeting message below the Earth that reads:  
   *"Hello world, my name is Brendan Potter"*
@@ -24,7 +23,7 @@ Additional sections include:
   Utilized to render the low-poly Earth model and other 3D visual elements.
   
 - **Tailwind CSS:**  
-  A utility-first CSS framework that enables rapid styling and ensures responsiveness across devices (from iPhone to desktop). All global styles are managed in a single file.
+  A utility-first CSS framework that enables rapid styling and ensures responsiveness across devices (from iPhone to desktop). Global styles are managed in a single file.
 
 ## Requirements & Implementation Steps
 
@@ -35,9 +34,6 @@ Below is a step-by-step breakdown of the requirements for the AI implementation:
    - Ensure smooth scrolling behavior between sections.
 
 2. **Landing Page:**
-   - **Video Background:**
-     - Add a full-screen video element that plays on loop.
-     - Ensure that if the video is not playing, the background defaults to black.
    - **Central Low-Poly Earth Model:**
      - Integrate Three.js to render a low-poly Earth model.
      - Implement a fade-in animation effect on load.
@@ -59,15 +55,15 @@ Below is a step-by-step breakdown of the requirements for the AI implementation:
 
 5. **Additional Sections (About & Contact):**
    - Create sections to provide further details about your background and ways to get in touch.
-   - Ensure that these sections follow the same global styling and responsive design.
+   - Ensure that these sections follow the same styling and responsive design.
 
 6. **Global Styling:**
    - Define all global styles in a single file (e.g., `src/styles/global.css`).
-   - Set the default background color to black (when no video is active) and use white text throughout.
+   - Set the default background color (for example, black) and use a consistent text color throughout the site.
    - Configure Tailwind CSS for responsive design across mobile (iPhone) and desktop devices.
 
 7. **Performance & Accessibility:**
-   - Optimize video and 3D assets to ensure fast load times.
+   - Optimize assets to ensure fast load times.
    - Ensure the website is fully responsive and accessible on all target devices.
 
 ## Repository Structure
