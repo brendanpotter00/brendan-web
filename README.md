@@ -4,15 +4,13 @@ Welcome to my personal website repository! This project is a frontend-only, sing
 
 ## Overview
 
-This website serves as my digital portfolio where I share insights on software engineering, showcase my projects, and highlight my professional experience. The single-page layout features distinct sections, beginning with a dynamic landing page that includes:
-- A central low-poly Earth model rendered with Three.js that fades in
-- A greeting message below the Earth that reads:  
+This website serves as my digital portfolio where I share insights on software engineering, showcase my projects, and highlight my professional experience. The single-page layout features distinct sections in the following order:
+- **Landing:** Featuring a central low-poly Earth model rendered with Three.js that fades in and a greeting message:  
   *"Hello world, my name is Brendan Potter"*
-
-Additional sections include:
-- **Experience:** A dedicated section highlighting my professional journey at ForeFlight and other roles, featuring reusable card components for each role.
-- **Projects:** A section that showcases my projects using card components to detail each project.
-- **About & Contact:** Sections providing more details about me, my work, and ways to get in touch.
+- **About:** Providing more details about me and my background.
+- **Experience:** Highlighting my professional journey at ForeFlight and other roles with reusable card components.
+- **Projects:** Showcasing my projects with card components that detail each project.
+- **Contact:** Offering ways for visitors to get in touch.
 
 ## Technologies Used
 
@@ -30,7 +28,7 @@ Additional sections include:
 Below is a step-by-step breakdown of the requirements for the AI implementation:
 
 1. **Single-Page Scrollable Design:**
-   - Create a one-page layout where all sections (Landing, Experience, About, Projects, Contact) are arranged sequentially.
+   - Create a one-page layout where all sections (Landing, About, Experience, Projects, Contact) are arranged sequentially.
    - Ensure smooth scrolling behavior between sections.
 
 2. **Landing Page:**
@@ -41,34 +39,43 @@ Below is a step-by-step breakdown of the requirements for the AI implementation:
      - Display a text element below the Earth with the message:  
        *"Hello world, my name is Brendan Potter"*
 
-3. **Experience Section:**
+3. **About Section:**
+   - Develop an "About" section that provides background information about you.
+   - Ensure consistent styling with the rest of the site using global styles.
+
+4. **Experience Section:**
    - Develop a section that highlights key professional experiences.
    - **Reusable Experience Card Component:**
      - Create a reusable card component that can be used to display individual experience items (e.g., job title, company, duration, and key achievements).
-   - Ensure this section is styled consistently with the rest of the site using global styling.
+   - Style this section consistently with the global styling.
 
-4. **Projects Section:**
+5. **Projects Section:**
    - Build a section to showcase your projects.
    - **Reusable Project Card Component:**
      - Develop a card component for projects that includes details like project title, technologies used, description, and links.
    - Maintain the overall scrollable layout and consistent styling.
 
-5. **Additional Sections (About & Contact):**
-   - Create sections to provide further details about your background and ways to get in touch.
-   - Ensure that these sections follow the same styling and responsive design.
+6. **Contact Section:**
+   - Create a section to provide visitors with ways to get in touch.
+   - Ensure that this section follows the same styling and responsive design as the rest of the site.
 
-6. **Global Styling:**
+7. **Global Styling:**
    - Define all global styles in a single file (e.g., `src/styles/global.css`).
    - Set the default background color (for example, black) and use a consistent text color throughout the site.
    - Configure Tailwind CSS for responsive design across mobile (iPhone) and desktop devices.
 
-7. **Performance & Accessibility:**
+8. **Performance & Accessibility:**
    - Optimize assets to ensure fast load times.
    - Ensure the website is fully responsive and accessible on all target devices.
 
-## Repository Structure
+## Optional Features
 
-Below is the proposed structure for the repository:
+- **Optional: Video Background**
+  - If desired, add a full-screen video element that plays on loop as a background for the landing page.
+  - When not active, the background should default to the standard color (e.g., black).
+  - This feature can be implemented later as an enhancement without affecting the core functionality.
+
+## Repository Structure
 
 /brendan-personal-website ├── /public │ ├── index.html # Main HTML file for the React app │ ├── favicon.ico │ └── /assets # Static files (video background, images, etc.) │ ├── /src │ ├── /components # Reusable React components used across the site │ │ ├── Header.jsx # Navigation header component │ │ ├── Footer.jsx # Footer component │ │ ├── VideoBackground.jsx # Component for rendering the video background │ │ ├── EarthModel.jsx # Component that uses Three.js to render the low-poly Earth with fade-in │ │ ├── ExperienceCard.jsx # Reusable card component for individual experience items │ │ └── ProjectCard.jsx # Reusable card component for individual projects │ │ │ ├── /sections # Components for individual sections of the page │ │ ├── Landing.jsx # Landing page section (video, Earth model, greeting) │ │ ├── Experience.jsx # Experience section that uses ExperienceCard components │ │ ├── About.jsx # About section │ │ ├── Projects.jsx # Projects section that uses ProjectCard components │ │ └── Contact.jsx # Contact section │ │ │ ├── /styles # Styling files and Tailwind configuration │ │ ├── global.css # Global styles (black background, white text, etc.) │ │ └── tailwind.config.js # Tailwind CSS configuration │ │ │ └── /utils # Helper functions and utilities (e.g., animations, data formatting) │ └── helpers.js │ ├── package.json # Project dependencies and scripts └── README.md # Project documentation (this file)
 
