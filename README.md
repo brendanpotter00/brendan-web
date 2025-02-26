@@ -74,6 +74,7 @@ Below is a step-by-step breakdown of the requirements for the AI implementation:
   - If desired, add a full-screen video element that plays on loop as a background for the landing page.
   - When not active, the background should default to the standard color (e.g., black).
   - This feature can be implemented later as an enhancement without affecting the core functionality.
+  - This will be the last step
 
 ## Repository Structure
 
