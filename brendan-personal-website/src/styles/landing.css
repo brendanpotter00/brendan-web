@@ -1,0 +1,48 @@
+/* styles/landing.css */
+
+/* Fade‑in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Landing section */
+#landing {
+  position: relative;
+  min-height: 100vh;
+  opacity: 0;
+  animation: fade-in 1s forwards;
+  animation-delay: 1s;
+}
+
+/* Wrapper around the hero text */
+.hero-wrapper {
+  position: relative;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 100vh;
+  padding-bottom: 10rem;
+}
+
+/* Hero heading styles */
+.hero-heading {
+  font-size: var(--hero-size-desktop);
+  font-weight: 700; /* font-bold */
+  text-align: center;
+  margin: 0; /* reset default h1 margin */
+  bottom: 0;
+}
+
+/* bump up size on md+ screens */
+@media (min-width: 768px) {
+  .hero-heading {
+    font-size: var(--hero-size-mobile); /* md:text-6xl */
+  }
+}
