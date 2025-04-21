@@ -1,22 +1,21 @@
+// src/components/DebugOutline.jsx
 import React, { useMemo } from "react";
-import { DEVELOPER_MODE } from "../utils/globalVariables";
+import { useAppContext } from "../context/AppContext";
 
 export default function DebugOutline({ children }) {
-  // only red, green, or blue
+  const { developerMode } = useAppContext();
+
+  // pick one of red/green/blue once
   const outlineColor = useMemo(() => {
     const colors = ["#ff0000", "#00ff00", "#0000ff"];
-    const idx = Math.floor(Math.random() * colors.length);
-    return colors[idx];
+    return colors[Math.floor(Math.random() * colors.length)];
   }, []);
 
-  if (!DEVELOPER_MODE) {
-    return <>{children}</>;
-  }
-
+  // Always render the same <div>, just toggle the outline
   return (
     <div
       style={{
-        outline: `2px solid ${outlineColor}`,
+        outline: developerMode ? `2px solid ${outlineColor}` : "none",
         outlineOffset: "2px",
       }}
     >

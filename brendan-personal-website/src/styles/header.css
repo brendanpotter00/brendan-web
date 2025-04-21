@@ -1,0 +1,19 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.header-toggle {
+  display: flex;
+  align-items: center;
+}
