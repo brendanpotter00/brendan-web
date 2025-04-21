@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import WorldModel from "../threejs_models/WorldModel";
 import "../styles/world.css";
+import { isMobile } from "../utils/globalVariables";
 
 const World3D = () => {
   return (
@@ -10,7 +11,7 @@ const World3D = () => {
       <Canvas
         camera={{
           position: [0, 6.75, 14],
-          fov: 55,
+          fov: isMobile ? 75 : 55,
           near: 0.1,
           far: 1000,
         }}
