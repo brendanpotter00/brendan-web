@@ -18,8 +18,10 @@ const Landing = () => (
             sequence={[
               "",
               3000,
-              "Hello World!",
+              "Hello world",
               2000, // type this, wait 2s
+              "Hello World!",
+              500,
               "",
               500, // delete it, wait 0.5s
             ]}
