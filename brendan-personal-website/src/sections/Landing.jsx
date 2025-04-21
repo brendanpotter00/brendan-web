@@ -1,6 +1,7 @@
 // src/components/Landing.jsx
 import React from "react";
 import Earth3D from "../component_models/Earth3D";
+import { TypeAnimation } from "react-type-animation";
 import "../styles/landing.css";
 import "../styles/global.css";
 import { SHOW_PICTURES } from "../utils/globalVariables";
@@ -12,7 +13,23 @@ const Landing = () => (
     <div className="hero-wrapper">
       <DebugOutline>
         <h1 className="hero-heading">
-          Hello World! <br />
+          <TypeAnimation
+            // Sequence: type, pause, then delete & repeat
+            sequence={[
+              "",
+              3000,
+              "Hello World!",
+              2000, // type this, wait 2s
+              "",
+              500, // delete it, wait 0.5s
+            ]}
+            speed={5} // typing speed in ms per character
+            deletionSpeed={10} // optional: speed at which it deletes
+            repeat={Infinity} // loop forever
+            cursor={true} // show the cursor
+            style={{ display: "inline-block" }}
+          />
+          <br />
           My name is Brendan Potter
         </h1>
       </DebugOutline>
