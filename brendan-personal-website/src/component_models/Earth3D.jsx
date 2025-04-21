@@ -3,10 +3,12 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import EarthModel from "../threejs_models/EarthModel";
 import CursorLight from "./CursorLight";
+import { DEVELOPER_MODE } from "../utils/globalVariables";
+import DebugOutline from "../components_jsx/DebugOutline";
 
 const Earth3D = () => {
   return (
-    <div className="absolute top-0 left-0 w-full h-screen border-4 border-red-500">
+    <div className="absolute top-0 left-0 w-full h-screen">
       <Canvas
         style={{ touchAction: "pan-y" }}
         camera={{
