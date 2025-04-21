@@ -3,8 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import EarthModel from "../threejs_models/EarthModel";
 import CursorLight from "./CursorLight";
-import { DEVELOPER_MODE } from "../utils/globalVariables";
-import DebugOutline from "../components_jsx/DebugOutline";
 
 const Earth3D = () => {
   return (
