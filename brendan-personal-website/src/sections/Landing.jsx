@@ -1,10 +1,12 @@
 // src/components/Landing.jsx
 import React from "react";
-import Earth3D from "../components/Earth3D";
+import Earth3D from "../component_models/Earth3D";
 import "../styles/landing.css";
+import "../styles/global.css";
+import { SHOW_PICTURES } from "../utils/globalVariables";
 
 const Landing = () => (
-  <section id="landing">
+  <section id="landing" className={SHOW_PICTURES ? "picture-background" : ""}>
     <Earth3D />
 
     <div className="hero-wrapper">

@@ -10,9 +10,22 @@ html {
 body {
   @apply bg-primary text-secondary;
 }
-
-.canvas-wrapper {
-  touch-action: pan-y;
+.picture-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background:
+    /* top: vignette – transparent center, dark edge */
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0) 70%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    /* middle: overall tint */
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../public/assets/flying.JPG");
+  background-size: cover;
+  background-position: center;
 }
 
 /* styles/variables.css */

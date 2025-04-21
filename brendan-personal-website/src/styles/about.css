@@ -1,0 +1,61 @@
+/* base style */
+#about {
+  opacity: 0;
+  transition: opacity 2s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 4rem 1rem;
+  min-height: 60vh;
+}
+
+/* reveal when scrolled into view */
+#about.visible {
+  opacity: 1;
+}
+
+/* text content */
+.about_text {
+  max-width: 1000px;
+}
+
+.about_content {
+}
+
+/* heading */
+.about_heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* paragraphs */
+.about_text p {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* larger screens: two columns */
+@media (min-width: 768px) {
+  #about {
+    flex-direction: row; /* side‑by‑side */
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+
+  .about_card-wrapper {
+    flex: 0 0 350px; /* fixed-ish width for card */
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+
+  .about_content {
+    flex: 1; /* take remaining space */
+  }
+
+  .about_heading {
+    font-size: 2.5rem;
+  }
+}

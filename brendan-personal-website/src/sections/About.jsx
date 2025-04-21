@@ -1,20 +1,50 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
+import "../styles/about.css";
+import "../styles/global.css";
+import World3D from "../component_models/World3D";
 
-const About = () => {
+export default function About() {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center py-16"
+      ref={ref}
+      className={isVisible ? "about visible" : "about"}
     >
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">About Me</h2>
-        <div className="max-w-3xl">
-          {/* Add your about content here */}
-          <p className="text-lg mb-4">Software Engineer at ForeFlight...</p>
+      <div className="about_text">
+        <h2 className="about_heading">About Me</h2>
+        <div className="about_text">
+          <p>
+            I’m a Full‑Stack Software Engineer at ForeFlight (a Boeing Company),
+            specializing in React, TypeScript, and Three.js. I love crafting
+            intuitive, high‑performance user experiences.
+          </p>
+          <p>
+            Outside of code you’ll find me studying for my private pilot’s
+            license, exploring 3D graphics, or planning my next flight in a
+            Cessna 172.
+          </p>
         </div>
+      </div>
+      <div className="about_content">
+        <World3D />
       </div>
     </section>
   );
-};
-
-export default About;
+}
