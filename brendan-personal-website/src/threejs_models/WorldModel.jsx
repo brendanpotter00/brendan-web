@@ -24,8 +24,8 @@ export default function WorldModel({ wireframe = false }) {
   useFrame(({ clock }) => {
     if (worldRef.current) {
       const t = clock.getElapsedTime();
-      const amplitude = 0.5; // vertical range
-      const speed = 0.5; // cycles per second
+      const amplitude = 0.6; // vertical range
+      const speed = 0.8; // cycles per second
       worldRef.current.position.y = Math.sin(t * speed) * amplitude;
     }
   });
