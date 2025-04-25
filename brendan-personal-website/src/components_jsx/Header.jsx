@@ -1,5 +1,6 @@
 // src/components/Header.jsx
 import React from "react";
+import { styled } from "@mui/material/styles";
 import { useAppContext } from "../context/AppContext";
 import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -16,10 +17,9 @@ export default function Header() {
           <div className="header-toggle">
             <FormControlLabel
               control={
-                <Switch
+                <CustomSwitch
                   checked={developerMode}
                   onChange={toggleDeveloperMode}
-                  color="primary"
                 />
               }
               label="Dev Mode"
@@ -30,3 +30,12 @@ export default function Header() {
     </DebugOutline>
   );
 }
+
+const CustomSwitch = styled(Switch)(() => ({
+  "& .MuiSwitch-track": {
+    backgroundColor: "#d8d8d8", // unchecked
+  },
+  "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
+    backgroundColor: "#63ff3a", // checked
+  },
+}));
