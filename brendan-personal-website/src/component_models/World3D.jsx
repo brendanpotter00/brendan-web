@@ -5,8 +5,10 @@ import WorldModel from "../threejs_models/WorldModel";
 import "../styles/world.css";
 import { isMobile } from "../utils/globalVariables";
 import DebugOutline from "../components_jsx/DebugOutline";
+import { useAppContext } from "../context/AppContext";
 
 const World3D = () => {
+  const { developerMode } = useAppContext();
   return (
     <DebugOutline>
       <div className="world3d-wrapper">
@@ -53,7 +55,7 @@ const World3D = () => {
               shadow-mapSize-height={512}
             />
 
-            <WorldModel />
+            <WorldModel wireframe={developerMode} />
 
             {/* Controls */}
             <OrbitControls

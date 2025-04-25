@@ -3,8 +3,10 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import EarthModel from "../threejs_models/EarthModel";
 import CursorLight from "./CursorLight";
+import { useAppContext } from "../context/AppContext";
 
 const Earth3D = () => {
+  const { developerMode } = useAppContext();
   return (
     <div className="absolute top-0 left-0 w-full h-screen">
       <Canvas
@@ -33,7 +35,7 @@ const Earth3D = () => {
             shadow-mapSize-width={1024}
             shadow-mapSize-height={1024}
           />
-          <EarthModel />
+          <EarthModel wireframe={developerMode} />
           <CursorLight />
 
           {/* Controls */}
