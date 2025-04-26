@@ -36,12 +36,11 @@ body {
    Experience section
    —————————————————————————— */
 #experience {
-  min-height: 100vh;
-  padding: 1rem 2rem;
+  position: relative;
 }
-
 .experience-container {
-  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .experience-heading {

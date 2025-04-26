@@ -3,10 +3,13 @@ import "../styles/about.css";
 import "../styles/global.css";
 import World3D from "../component_models/World3D";
 import DebugOutline from "../components_jsx/DebugOutline";
+import ExperienceBackground from "../component_models/ExperienceBackgound";
+import { useAppContext } from "../context/AppContext";
 
 export default function About() {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const { developerMode } = useAppContext();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,6 +49,8 @@ export default function About() {
         </DebugOutline>
       </div>
       <div className="about_content">
+        {developerMode && <ExperienceBackground />}
+
         <World3D />
       </div>
     </section>

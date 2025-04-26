@@ -14,8 +14,16 @@ export default function ExperienceBackground() {
   return (
     <Canvas
       className="experience-bg-canvas"
-      style={{ width: "100%", height: "100vh" }}
-      camera={{ position: [0, 20, 50], fov: 60 }}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: -1,
+        pointerEvents: "none",
+      }}
+      camera={{ near: 0.1, far: 1000, position: [0, 20, 50], fov: 60 }}
       gl={{ antialias: true, alpha: true }}
     >
       {/* Debug overlay */}
@@ -24,7 +32,7 @@ export default function ExperienceBackground() {
       {/* Animated sky & clouds scene */}
       <BackgroundScene />
 
-      {/* Optional camera controls (disabled interaction) */}
+      {/* Camera controls (read-only) */}
       <CameraControls enablePan={false} enableZoom={false} makeDefault />
     </Canvas>
   );
@@ -34,18 +42,15 @@ function BackgroundScene() {
   const sceneRef = useRef<THREE.Group>(null!);
   const cloudRef = useRef<THREE.Object3D>(null!);
 
-  // Leva controls for sky configuration
+  // Sky controls
   const { distance, sunPosition, inclination, azimuth } = useControls("Sky", {
     distance: { value: 800, min: 100, max: 2000, step: 50 },
-    sunPosition: {
-      value: [0, 1, 0],
-      joystick: "invertY",
-    },
+    sunPosition: { value: [0, 1, 0], joystick: "invertY" },
     inclination: { value: 0, min: 0, max: 1, step: 0.01 },
     azimuth: { value: 0.25, min: 0, max: 1, step: 0.01 },
   });
 
-  // Leva controls for cloud animation
+  // Clouds controls
   const { speed, segments, volume, fade, x, y, z, range, color } = useControls(
     "Clouds",
     {
@@ -62,16 +67,13 @@ function BackgroundScene() {
   );
 
   useFrame((state, delta) => {
-    // gently rotate the group
     sceneRef.current.rotation.y = Math.cos(state.clock.elapsedTime / 2) / 2;
     sceneRef.current.rotation.x = Math.sin(state.clock.elapsedTime / 2) / 2;
-    // rotate first cloud instance
     cloudRef.current.rotation.y -= delta * speed;
   });
 
   return (
     <>
-      {/* Sky dome inside far plane */}
       <SkyImpl
         distance={distance}
         sunPosition={sunPosition as [number, number, number]}
@@ -79,11 +81,9 @@ function BackgroundScene() {
         azimuth={azimuth}
       />
 
-      {/* Lighting */}
       <ambientLight intensity={0.5} />
       <directionalLight position={[100, 100, 100]} intensity={1} />
 
-      {/* Group for cloud rotation */}
       <group ref={sceneRef}>
         <Clouds
           texture="/assets/cloud.png"
