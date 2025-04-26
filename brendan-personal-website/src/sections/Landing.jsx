@@ -4,7 +4,7 @@ import Earth3D from "../component_models/Earth3D";
 import { TypeAnimation } from "react-type-animation";
 import "../styles/landing.css";
 import "../styles/global.css";
-import { SHOW_PICTURES } from "../utils/globalVariables";
+import { CanvasZIndex, SHOW_PICTURES } from "../utils/globalVariables";
 import DebugOutline from "../components_jsx/DebugOutline";
 import { useAppContext } from "../context/AppContext";
 
@@ -13,7 +13,7 @@ const Landing = () => {
   return (
     <section id="landing" className={SHOW_PICTURES ? "picture-background" : ""}>
       <Earth3D />
-      <div className="hero-wrapper">
+      <div className="hero-wrapper" style={{ zIndex: CanvasZIndex }}>
         <DebugOutline>
           <h1 className="hero-heading">
             {developerMode && "console.log("}

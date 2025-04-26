@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  padding: 1.5rem 1rem;
+  padding: 1rem 2rem;
   min-height: 60vh;
 }
 
@@ -22,34 +22,31 @@
 
 /* heading */
 .about_heading {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
 /* paragraphs */
 .about_text p {
   font-size: var(--text-base);
-  line-height: 1.6;
   margin-bottom: 1rem;
-  color: #333;
 }
 
 /* larger screens: two columns */
 @media (min-width: 768px) {
   #about {
-    flex-direction: row; /* side‑by‑side */
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     min-height: 100vh;
+    justify-content: center;
+    padding: 1rem 5rem;
   }
 
   .about_card-wrapper {
     flex: 0 0 350px; /* fixed-ish width for card */
     margin-bottom: 0;
     margin-right: 2rem;
-  }
-
-  .about_content {
-    flex: 1; /* take remaining space */
   }
 
   .about_heading {

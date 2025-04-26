@@ -22,7 +22,6 @@
 /* Wrapper around the hero text */
 .hero-wrapper {
   position: relative;
-  z-index: 0;
   display: flex;
   flex-direction: column;
   align-items: center;

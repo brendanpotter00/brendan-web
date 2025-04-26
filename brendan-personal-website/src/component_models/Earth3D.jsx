@@ -4,11 +4,12 @@ import { OrbitControls } from "@react-three/drei";
 import EarthModel from "../threejs_models/EarthModel";
 import CursorLight from "./CursorLight";
 import { useAppContext } from "../context/AppContext";
+import "../styles/earth.css";
 
 const Earth3D = () => {
   const { developerMode } = useAppContext();
   return (
-    <div className="absolute top-0 left-0 w-full h-screen">
+    <div className="earth-container">
       <Canvas
         style={{ touchAction: "pan-y" }}
         camera={{

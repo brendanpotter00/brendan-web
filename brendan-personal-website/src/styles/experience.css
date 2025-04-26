@@ -1,0 +1,74 @@
+/* styles/main.css */
+@import "./global.css";
+@import "./animations.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global tweaks */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-primary text-secondary;
+}
+
+/* picture-background */
+.picture-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0) 70%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../public/assets/flying.JPG");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ——————————————————————————
+   Experience section
+   —————————————————————————— */
+#experience {
+  min-height: 100vh;
+  padding: 1rem 2rem;
+}
+
+.experience-container {
+  width: 100%;
+}
+
+.experience-heading {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.experience-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* style videos embedded inside each experience card */
+.experience-card video {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  #experience {
+    padding: 1rem 5rem;
+  }
+  .experience-heading {
+    font-size: var(--hero-size-desktop);
+  }
+}

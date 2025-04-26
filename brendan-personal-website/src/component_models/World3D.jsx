@@ -2,10 +2,10 @@ import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import WorldModel from "../threejs_models/WorldModel";
-import "../styles/world.css";
 import { isMobile } from "../utils/globalVariables";
 import DebugOutline from "../components_jsx/DebugOutline";
 import { useAppContext } from "../context/AppContext";
+import "../styles/world.css";
 
 const World3D = () => {
   const { developerMode } = useAppContext();
@@ -15,7 +15,7 @@ const World3D = () => {
         <Canvas
           camera={{
             position: [0, 6.75, 14],
-            fov: isMobile ? 80 : 55,
+            fov: isMobile ? 85 : 60,
             near: 0.1,
             far: 1000,
           }}
