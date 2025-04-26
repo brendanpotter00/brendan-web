@@ -2,41 +2,48 @@ import React from "react";
 import ExperienceCard from "../components_jsx/ExperienceCard";
 import DebugOutline from "../components_jsx/DebugOutline";
 import "../styles/experience.css";
+import ExperienceBackground from "../component_models/ExperienceBackgound";
+import { useAppContext } from "../context/AppContext";
 
-const Experience = () => (
-  <section id="experience">
-    <DebugOutline>
-      <div className="experience-container">
-        <DebugOutline>
-          <h2 className="experience-heading">Experience</h2>
-          <div className="experience-grid">
-            {resumeExperiences.map((exp, idx) => {
-              // Assign two videos to the first card only
-              const videos =
-                idx === 0
-                  ? [
-                      "https://www.w3schools.com/html/mov_bbb.mp4",
-                      "https://www.w3schools.com/html/movie.mp4",
-                    ]
-                  : [];
+const Experience = () => {
+  const { developerMode } = useAppContext();
 
-              return (
-                <ExperienceCard
-                  key={idx}
-                  title={exp.title}
-                  company={exp.company}
-                  duration={exp.duration}
-                  description={exp.description}
-                  videos={videos}
-                />
-              );
-            })}
-          </div>
-        </DebugOutline>
-      </div>
-    </DebugOutline>
-  </section>
-);
+  return (
+    <section id="experience">
+      {developerMode && <ExperienceBackground />}
+      <DebugOutline>
+        <div className="experience-container">
+          <DebugOutline>
+            <h2 className="experience-heading">Experience</h2>
+            <div className="experience-grid">
+              {resumeExperiences.map((exp, idx) => {
+                // Assign two videos to the first card only
+                const videos =
+                  idx === 0
+                    ? [
+                        "https://www.w3schools.com/html/mov_bbb.mp4",
+                        "https://www.w3schools.com/html/movie.mp4",
+                      ]
+                    : [];
+
+                return (
+                  <ExperienceCard
+                    key={idx}
+                    title={exp.title}
+                    company={exp.company}
+                    duration={exp.duration}
+                    description={exp.description}
+                    videos={videos}
+                  />
+                );
+              })}
+            </div>
+          </DebugOutline>
+        </div>
+      </DebugOutline>
+    </section>
+  );
+};
 
 export default Experience;
 
