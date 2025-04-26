@@ -11,36 +11,34 @@ const Experience = () => {
   return (
     <section id="experience">
       {developerMode && <ExperienceBackground />}
-      <DebugOutline>
-        <div className="experience-container">
-          <DebugOutline>
-            <h2 className="experience-heading">Experience</h2>
-            <div className="experience-grid">
-              {resumeExperiences.map((exp, idx) => {
-                // Assign two videos to the first card only
-                const videos =
-                  idx === 0
-                    ? [
-                        "https://www.w3schools.com/html/mov_bbb.mp4",
-                        "https://www.w3schools.com/html/movie.mp4",
-                      ]
-                    : [];
+      <div className="experience-container">
+        {/* <DebugOutline> */}
+        <h2 className="experience-heading">Experience</h2>
+        <div className="experience-grid">
+          {resumeExperiences.map((exp, idx) => {
+            // Assign two videos to the first card only
+            const videos =
+              idx === 0
+                ? [
+                    "https://www.w3schools.com/html/mov_bbb.mp4",
+                    "https://www.w3schools.com/html/movie.mp4",
+                  ]
+                : [];
 
-                return (
-                  <ExperienceCard
-                    key={idx}
-                    title={exp.title}
-                    company={exp.company}
-                    duration={exp.duration}
-                    description={exp.description}
-                    videos={videos}
-                  />
-                );
-              })}
-            </div>
-          </DebugOutline>
+            return (
+              <ExperienceCard
+                key={idx}
+                title={exp.title}
+                company={exp.company}
+                duration={exp.duration}
+                description={exp.description}
+                videos={videos}
+              />
+            );
+          })}
         </div>
-      </DebugOutline>
+        {/* </DebugOutline> */}
+      </div>
     </section>
   );
 };

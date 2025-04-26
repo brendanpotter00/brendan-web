@@ -12,29 +12,40 @@ import { useControls } from "leva";
 
 export default function ExperienceBackground() {
   return (
-    <Canvas
-      className="experience-bg-canvas"
+    <div
+      className="experience-bg-wrapper"
       style={{
         position: "absolute",
         top: 0,
         left: 0,
         width: "100%",
         height: "100%",
-        zIndex: -1,
         pointerEvents: "none",
+        zIndex: -1,
       }}
-      camera={{ near: 0.1, far: 1000, position: [0, 20, 50], fov: 60 }}
-      gl={{ antialias: true, alpha: true }}
     >
-      {/* Debug overlay */}
-      <StatsGl />
+      <Canvas
+        className="experience-bg-canvas"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+        camera={{ near: 0.1, far: 1000, position: [0, 20, 50], fov: 60 }}
+        gl={{ antialias: true, alpha: true }}
+      >
+        {/* Debug overlay */}
+        <StatsGl />
 
-      {/* Animated sky & clouds scene */}
-      <BackgroundScene />
+        {/* Animated sky & clouds scene */}
+        <BackgroundScene />
 
-      {/* Camera controls (read-only) */}
-      <CameraControls enablePan={false} enableZoom={false} makeDefault />
-    </Canvas>
+        {/* Camera controls (read-only) */}
+        <CameraControls enablePan={false} enableZoom={false} makeDefault />
+      </Canvas>
+    </div>
   );
 }
 
@@ -42,7 +53,6 @@ function BackgroundScene() {
   const sceneRef = useRef<THREE.Group>(null!);
   const cloudRef = useRef<THREE.Object3D>(null!);
 
-  // Sky controls
   const { distance, sunPosition, inclination, azimuth } = useControls("Sky", {
     distance: { value: 800, min: 100, max: 2000, step: 50 },
     sunPosition: { value: [0, 1, 0], joystick: "invertY" },
@@ -50,7 +60,6 @@ function BackgroundScene() {
     azimuth: { value: 0.25, min: 0, max: 1, step: 0.01 },
   });
 
-  // Clouds controls
   const { speed, segments, volume, fade, x, y, z, range, color } = useControls(
     "Clouds",
     {
@@ -74,12 +83,13 @@ function BackgroundScene() {
 
   return (
     <>
-      <SkyImpl
+      {/* LIGHT MODE LATER */}
+      {/* <SkyImpl
         distance={distance}
         sunPosition={sunPosition as [number, number, number]}
         inclination={inclination}
         azimuth={azimuth}
-      />
+      /> */}
 
       <ambientLight intensity={0.5} />
       <directionalLight position={[100, 100, 100]} intensity={1} />

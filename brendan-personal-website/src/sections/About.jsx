@@ -32,6 +32,7 @@ export default function About() {
       className={isVisible ? "about visible" : "about"}
     >
       <div className="about_content">
+        {" "}
         <DebugOutline>
           <h2 className="about_heading">About Me</h2>
           <div className="about_text">
