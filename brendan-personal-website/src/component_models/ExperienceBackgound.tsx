@@ -63,13 +63,13 @@ function BackgroundScene() {
   const { speed, segments, volume, fade, x, y, z, range, color } = useControls(
     "Clouds",
     {
-      speed: { value: 0.1, min: 0, max: 1, step: 0.01 },
-      segments: { value: 20, min: 1, max: 80, step: 1 },
-      volume: { value: 6, min: 0, max: 100, step: 0.1 },
-      fade: { value: 10, min: 0, max: 400, step: 1 },
-      x: { value: 6, min: 0, max: 100, step: 1 },
-      y: { value: 1, min: 0, max: 100, step: 1 },
-      z: { value: 1, min: 0, max: 100, step: 1 },
+      speed: { value: 0.05, min: 0, max: 1, step: 0.01 },
+      segments: { value: 10, min: 1, max: 80, step: 1 },
+      volume: { value: 22, min: 0, max: 100, step: 0.1 },
+      fade: { value: 250, min: 0, max: 400, step: 1 },
+      x: { value: 25, min: 0, max: 100, step: 1 },
+      y: { value: 55, min: 0, max: 100, step: 1 },
+      z: { value: 200, min: 0, max: 100, step: 1 },
       range: { value: 400, min: 0, max: 1000, step: 10 },
       color: { value: "white" },
     }

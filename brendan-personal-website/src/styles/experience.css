@@ -37,6 +37,7 @@ body {
    —————————————————————————— */
 #experience {
   position: relative;
+  padding: 1rem 2rem;
 }
 .experience-container {
   position: relative;

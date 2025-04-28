@@ -3,38 +3,42 @@ import React from "react";
 import ProjectCard from "../components_jsx/ProjectCard";
 import DebugOutline from "../components_jsx/DebugOutline";
 import "../styles/project.css";
+import { useAppContext } from "../context/AppContext";
 
-const Projects = () => (
-  <section id="projects">
-    <DebugOutline>
-      <div className="projects-container">
-        <h2 className="projects-heading">Projects</h2>
-        <div className="projects-grid">
-          {resumeProjects.map((proj, idx) => {
-            const videos =
-              idx === 0
-                ? [
-                    "https://www.w3schools.com/html/mov_bbb.mp4",
-                    "https://www.w3schools.com/html/movie.mp4",
-                  ]
-                : [];
+const Projects = () => {
+  const { developerMode } = useAppContext();
+  return (
+    <section id="projects">
+      <DebugOutline>
+        <div className="projects-container">
+          <h2 className="projects-heading">Projects</h2>
+          <div className="projects-grid">
+            {resumeProjects.map((proj, idx) => {
+              const videos =
+                idx === 1
+                  ? [
+                      "https://www.w3schools.com/html/mov_bbb.mp4",
+                      "https://www.w3schools.com/html/movie.mp4",
+                    ]
+                  : [];
 
-            return (
-              <ProjectCard
-                key={idx}
-                title={proj.title}
-                description={proj.description}
-                technologies={proj.technologies}
-                links={proj.links}
-                videos={videos}
-              />
-            );
-          })}
+              return (
+                <ProjectCard
+                  key={idx}
+                  title={proj.title}
+                  description={proj.description}
+                  technologies={proj.technologies}
+                  links={proj.links}
+                  videos={developerMode ? videos : []}
+                />
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </DebugOutline>
-  </section>
-);
+      </DebugOutline>
+    </section>
+  );
+};
 
 export default Projects;
 

@@ -50,8 +50,8 @@ export default function About() {
         </DebugOutline>
       </div>
       <div className="about_content">
+        {/* Move to Landing page */}
         {developerMode && <ExperienceBackground />}
-
         <World3D />
       </div>
     </section>
