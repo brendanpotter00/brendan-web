@@ -41,5 +41,6 @@ body {
   --hero-size-desktop: 2.25rem; /* 36px */
   --text-5xl: 3rem; /* 48px */
   --hero-size-mobile: 3.75rem; /* 60px */
+  --card-bg: rgba(255, 255, 255, 0.05);
   /* …add as many as you like… */
 }

@@ -17,3 +17,8 @@
   display: flex;
   align-items: center;
 }
+
+.header-toggle .MuiFormControlLabel-label {
+  font-weight: 700;
+  font-size: var(--text-lg);
+}
