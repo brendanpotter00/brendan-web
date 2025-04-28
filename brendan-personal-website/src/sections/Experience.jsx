@@ -16,7 +16,7 @@ const Experience = () => {
             {resumeExperiences.map((exp, idx) => {
               // Assign two videos to the first card only
               const videos =
-                idx === 1
+                idx === -1
                   ? [
                       "https://www.w3schools.com/html/mov_bbb.mp4",
                       "https://www.w3schools.com/html/movie.mp4",

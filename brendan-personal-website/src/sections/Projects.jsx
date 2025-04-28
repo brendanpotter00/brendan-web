@@ -15,7 +15,7 @@ const Projects = () => {
           <div className="projects-grid">
             {resumeProjects.map((proj, idx) => {
               const videos =
-                idx === 1
+                idx === -1
                   ? [
                       "https://www.w3schools.com/html/mov_bbb.mp4",
                       "https://www.w3schools.com/html/movie.mp4",
