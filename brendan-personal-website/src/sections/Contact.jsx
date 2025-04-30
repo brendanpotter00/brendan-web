@@ -22,7 +22,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
-                Let’s connect!
+                Let’s connect
               </a>
             </p>
           </div>
