@@ -62,10 +62,6 @@
 .plane-slot__canvas {
   width: 100%;
   height: 100%;
-  border: 1px solid var(--rule-dark);
-  border-radius: 12px;
-  background: linear-gradient(160deg, var(--paper-raised), #f1ead9);
-  overflow: hidden;
 }
 
 .plane-slot__caption {
