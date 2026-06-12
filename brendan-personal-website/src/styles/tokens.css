@@ -1,0 +1,20 @@
+:root {
+  /* paper-light palette */
+  --paper: #faf6ef;
+  --paper-raised: #fffdf8;
+  --ink: #1f1d1a;
+  --ink-muted: #6f6a5f;
+  --link: #2745d4;
+  --visited: #6d3fb0;
+  --magenta: #c2255c; /* VFR sectional-chart accent: tags, active nav, kickers */
+  --rule: #e2dac9;
+  --rule-dark: #cfc6b0;
+  --pill: #efe8d8;
+
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --max-width: 42rem;
+  --reveal-duration: 550ms;
+  --reveal-stagger: 50ms;
+}

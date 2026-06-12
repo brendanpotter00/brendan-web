@@ -1,46 +1,126 @@
-@import "./animations.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-primary text-secondary;
-}
-.picture-background {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background:
-    /* top: vignette – transparent center, dark edge */
-    radial-gradient(
-      ellipse at center,
-      rgba(0, 0, 0, 0) 70%,
-      rgba(0, 0, 0, 0.7) 100%
-    ),
-    /* middle: overall tint */
-      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../../public/assets/flying.JPG");
-  background-size: cover;
-  background-position: center;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* styles/variables.css */
-:root {
-  /* small → huge scale (example Tailwind equivalents) */
-  --text-xs: 0.75rem; /* ≈12px */
-  --text-sm: 0.875rem; /* ≈14px */
-  --text-base: 1rem; /* 16px */
-  --text-lg: 1.125rem; /* 18px */
-  --text-xl: 1.25rem; /* 20px */
-  --text-2xl: 1.5rem; /* 24px */
-  --text-3xl: 1.875rem; /* 30px */
-  --hero-size-desktop: 2.25rem; /* 36px */
-  --text-5xl: 3rem; /* 48px */
-  --hero-size-mobile: 3.75rem; /* 60px */
-  --card-bg: rgba(255, 255, 255, 0.05);
-  /* …add as many as you like… */
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 1.4rem 1.25rem 3rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1.6rem;
+}
+
+p {
+  margin: 0.4rem 0 0.9rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+a:visited {
+  color: var(--visited);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 1.4rem 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--pill);
+}
+
+:focus-visible {
+  outline: 2px solid var(--magenta);
+  outline-offset: 2px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.muted {
+  color: var(--ink-muted);
+}
+
+/* cascade reveal: elements rise in with a small stagger (--reveal-i) */
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-in {
+  animation: rise var(--reveal-duration) cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  animation-delay: calc(var(--reveal-i, 0) * var(--reveal-stagger));
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.is-in {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+  }
 }
