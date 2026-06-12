@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="site-footer">
       <span>© {new Date().getFullYear()} Brendan Potter</span>
       <button type="button" onClick={() => setFireLit(true)}>
-        sit by the fire 🔥
+        sit by the fire →
       </button>
       {fireLit && (
         <Suspense

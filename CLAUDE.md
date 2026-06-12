@@ -38,7 +38,7 @@ When asked to "add a project": append to `PROJECTS` in `brendan-personal-website
 ## Workflow: edit bio / experience / contact
 
 - Tagline, email, socials, location, key URLs: `src/data/site.js`.
-- Experience one-liners: `src/data/experience.js` (`years` is a short display string; keep `text` to one sentence).
+- Experience one-liners: `src/data/experience.js` (`years` is a short display string; keep `text` to one sentence; a company with multiple roles uses `roles: [{years, text}]` and renders as a grouped header).
 - About paragraphs: `src/pages/HomePage.jsx` (the only content that lives in a component).
 
 ## Architecture constraints (do not break)

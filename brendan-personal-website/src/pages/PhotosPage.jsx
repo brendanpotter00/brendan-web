@@ -52,10 +52,7 @@ export default function PhotosPage() {
         <h1 className="page-title">Photos</h1>
       </Reveal>
       {PHOTOS.length === 0 ? (
-        <p className="muted">
-          No photos yet. Drop landscape shots into <code>src/photos/</code> and
-          they'll show up here.
-        </p>
+        <p className="muted">Nothing here yet. Check back soon.</p>
       ) : (
         <div className="photo-list">
           {PHOTOS.map((photo, i) => (

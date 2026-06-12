@@ -31,7 +31,6 @@ export default function PlaneSlot() {
       ) : (
         <Placeholder />
       )}
-      <p className="plane-slot__caption">drag to spin</p>
     </div>
   );
 }
