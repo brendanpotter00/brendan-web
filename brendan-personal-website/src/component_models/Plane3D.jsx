@@ -44,6 +44,10 @@ export default function Plane3D() {
         rotateSpeed={0.9}
         minPolarAngle={0.9}
         maxPolarAngle={2.0}
+        // slow idle rotation; pauses while dragging, off under reduced motion
+        // (the "demand" frameloop never ticks it)
+        autoRotate
+        autoRotateSpeed={0.75}
       />
     </Canvas>
   );
