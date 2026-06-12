@@ -1,4 +1,4 @@
-import GitHubCalendar from "react-github-calendar";
+import { GitHubCalendar } from "react-github-calendar";
 import ErrorBoundary from "./ErrorBoundary";
 import { SITE } from "../data/site";
 
