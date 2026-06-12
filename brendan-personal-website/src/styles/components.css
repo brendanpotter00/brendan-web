@@ -53,9 +53,9 @@
 
 /* ---------- plane slot ---------- */
 .plane-slot {
-  flex: 0 0 150px;
-  width: 150px;
-  height: 150px;
+  flex: 0 0 180px;
+  width: 180px;
+  height: 180px;
 }
 
 .plane-slot__placeholder,
@@ -64,19 +64,11 @@
   height: 100%;
 }
 
-.plane-slot__caption {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  color: var(--ink-muted);
-  text-align: center;
-  margin-top: 0.3rem;
-}
-
 @media (max-width: 480px) {
   .plane-slot {
-    flex-basis: 116px;
-    width: 116px;
-    height: 116px;
+    flex-basis: 140px;
+    width: 140px;
+    height: 140px;
   }
 }
 

@@ -52,14 +52,31 @@ export default function HomePage() {
       <Reveal as="section" index={3}>
         <h2>Experience</h2>
         <ul className="exp-list">
-          {EXPERIENCE.map((job) => (
-            <li key={`${job.company}-${job.years}`}>
-              <span className="exp-years">{job.years}</span>
-              <span>
-                <b>{job.company}</b> · {job.text}
-              </span>
-            </li>
-          ))}
+          {EXPERIENCE.flatMap((job) =>
+            job.roles
+              ? [
+                  <li key={job.company}>
+                    <span className="exp-years" aria-hidden="true" />
+                    <span>
+                      <b>{job.company}</b>
+                    </span>
+                  </li>,
+                  ...job.roles.map((role) => (
+                    <li key={`${job.company}-${role.years}`}>
+                      <span className="exp-years">{role.years}</span>
+                      <span>{role.text}</span>
+                    </li>
+                  )),
+                ]
+              : [
+                  <li key={`${job.company}-${job.years}`}>
+                    <span className="exp-years">{job.years}</span>
+                    <span>
+                      <b>{job.company}</b> · {job.text}
+                    </span>
+                  </li>,
+                ],
+          )}
         </ul>
       </Reveal>
 
