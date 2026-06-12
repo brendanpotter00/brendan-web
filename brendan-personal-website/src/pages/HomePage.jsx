@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <main>
       <Reveal as="header" className="home-header" index={0}>
-        <div>
+        <div className="home-header__intro">
           <h1>{SITE.name}</h1>
           <p className="tagline">{SITE.tagline}</p>
           <p className="social-row">

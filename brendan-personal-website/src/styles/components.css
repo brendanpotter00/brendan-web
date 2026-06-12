@@ -39,6 +39,11 @@
   flex-wrap: wrap;
 }
 
+.home-header__intro {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
 .home-header .tagline {
   color: var(--ink-muted);
   margin: 0.1rem 0 0;
@@ -65,10 +70,13 @@
 }
 
 @media (max-width: 480px) {
+  .home-header {
+    flex-wrap: nowrap;
+  }
   .plane-slot {
-    flex-basis: 140px;
-    width: 140px;
-    height: 140px;
+    flex-basis: 120px;
+    width: 120px;
+    height: 120px;
   }
 }
 
