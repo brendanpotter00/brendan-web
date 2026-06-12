@@ -1,5 +1,6 @@
 // ProjectCard.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/project-card.css";
 import DebugOutline from "./DebugOutline";
 
@@ -9,6 +10,7 @@ const ProjectCard = ({
   technologies,
   links,
   videos = [],
+  id,
 }) => (
   <div className="project-card">
     <h3 className="title">{title}</h3>
@@ -23,6 +25,9 @@ const ProjectCard = ({
           </a>
         );
       })}
+      <Link to={`/blog/${id}`} className="blog-link">
+        View Blog
+      </Link>
     </div>
 
     {videos.length > 0 && (

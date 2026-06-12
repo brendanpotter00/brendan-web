@@ -108,7 +108,7 @@ export default function Camping3D() {
             <CampfireLight />
 
             {/* Your model */}
-            <CampingModel wireframe={developerMode} />
+            <CampingModel wireframe={false} />
 
             {/* Orbit controls */}
             <OrbitControls

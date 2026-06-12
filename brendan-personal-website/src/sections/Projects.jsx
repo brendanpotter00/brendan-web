@@ -25,6 +25,7 @@ const Projects = () => {
               return (
                 <ProjectCard
                   key={idx}
+                  id={proj.id}
                   title={proj.title}
                   description={proj.description}
                   technologies={proj.technologies}
@@ -44,14 +45,16 @@ export default Projects;
 
 const resumeProjects = [
   {
+    id: "spotify-uncovered",
     title: "Spotify Uncovered",
     description:
-      "Led a 5-person team building a React-based web app to analyze and visualize users’ Spotify metadata. Crafted system design, user stories, wireframes, and retrospectives for team alignment.",
+      "Led a 5-person team building a React-based web app to analyze and visualize users' Spotify metadata. Crafted system design, user stories, wireframes, and retrospectives for team alignment.",
     technologies: "React, NodeJS, GitHub Pages",
     links:
       "Live: https://brendanpotter00.github.io/Spotify_Uncovered_v2/ | Repo: https://github.com/brendanpotter00/Spotify_Uncovered_v2",
   },
   {
+    id: "market-predictor",
     title: "Market Predictor",
     description:
       "Developed a Python neural network to predict next-day stock closing prices using 60+ days of historical data from the Yahoo Finance API. Visualized predicted vs. actual trendlines in Matplotlib.",

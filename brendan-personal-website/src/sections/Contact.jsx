@@ -26,7 +26,7 @@ const Contact = () => {
               </a>
             </p>
           </div>
-          {/* {developerMode && <Camping3D />} */}
+          {developerMode && <Camping3D />}
         </div>
       </DebugOutline>
     </section>
