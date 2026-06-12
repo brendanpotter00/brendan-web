@@ -17,7 +17,7 @@ export default [
         sourceType: 'module',
       },
     },
-    settings: { react: { version: '18.3' } },
+    settings: { react: { version: '19.0' } },
     plugins: {
       react,
       'react-hooks': reactHooks,
@@ -29,10 +29,20 @@ export default [
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       'react/jsx-no-target-blank': 'off',
+      // no prop-types/TS in this project; copy uses real apostrophes
+      'react/prop-types': 'off',
+      'react/no-unescaped-entities': 'off',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
+    },
+  },
+  {
+    // react-three-fiber JSX uses three.js props eslint-plugin-react can't know
+    files: ['src/component_models/**', 'src/threejs_models/**'],
+    rules: {
+      'react/no-unknown-property': 'off',
     },
   },
 ]

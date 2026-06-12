@@ -1,5 +1,5 @@
 // src/threejs_models/CampingModel.jsx
-import React, { useRef, useEffect, useMemo } from "react";
+import { useRef, useEffect, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 
