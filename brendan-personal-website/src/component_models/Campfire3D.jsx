@@ -28,7 +28,7 @@ function CampfireLight({ flicker }) {
 export default function Campfire3D({ flicker = true }) {
   return (
     <Canvas
-      camera={{ position: [-2.5, -0.5, -2.5], fov: 60, near: 0.1, far: 1000 }}
+      camera={{ position: [-7, 3.4, -7], fov: 50, near: 0.1, far: 1000 }}
       dpr={[1, 1.75]}
       gl={{ antialias: true, powerPreference: "low-power" }}
     >

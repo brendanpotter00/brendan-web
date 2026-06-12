@@ -11,7 +11,10 @@ const modules = import.meta.glob(
 
 const PHOTOS = Object.entries(modules)
   .map(([path, url]) => {
-    const stem = path.split("/").pop().replace(/\.[^.]+$/, "");
+    const stem = path
+      .split("/")
+      .pop()
+      .replace(/\.[^.]+$/, "");
     const match = stem.match(/^(\d{4}-\d{2}-\d{2})-?(.*)$/);
     return {
       url,

@@ -11,7 +11,10 @@ const subscribeReducedMotion = (callback) => {
   return () => reducedMotionQuery.removeEventListener("change", callback);
 };
 const useReducedMotion = () =>
-  useSyncExternalStore(subscribeReducedMotion, () => reducedMotionQuery.matches);
+  useSyncExternalStore(
+    subscribeReducedMotion,
+    () => reducedMotionQuery.matches,
+  );
 
 export default function Plane3D() {
   const reduced = useReducedMotion();
