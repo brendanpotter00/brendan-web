@@ -7,6 +7,19 @@
 //   link  { href, label } (optional)
 export const ENTRIES = [
   {
+    date: "2026-06-14",
+    title: "Language detection",
+    text: "Built a language-detection library for the Cisco IQ agent router. Lingua handles the common case locally and falls back to a Mistral model only when confidence drops, then routes mixed-language messages by intent rather than majority language.",
+    tags: ["career"],
+  },
+  {
+    date: "2026-06-13",
+    title: "Location normalization",
+    text: "Built location normalization for onesecondswe.dev. A two-tier cascade maps messy job-posting strings to canonical places: a Postgres alias cache absorbs repeats, and Claude Haiku parses only cache misses, splitting multi-location posts into separate tags.",
+    tags: ["side-projects"],
+    link: { href: "https://onesecondswe.dev", label: "live" },
+  },
+  {
     date: "2026-06-11",
     title: "Site rebuild",
     text: "Rebuilt this site from a 3D-heavy scroller into the paper-light four-tab version you are reading. Paper, ink, and far fewer megabytes.",
