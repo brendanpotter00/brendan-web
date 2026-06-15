@@ -11,11 +11,13 @@ export default function HomePage() {
       <Reveal as="header" className="home-header" index={0}>
         <div className="home-header__intro">
           <h1>{SITE.name}</h1>
-          <p className="tagline">{SITE.tagline}</p>
+          <p className="tagline">
+            {SITE.tagline} Building <a href={SITE.onesecondswe}>onesecondswe</a>.
+          </p>
           <p className="social-row">
             <a href={SITE.github}>github</a> ·{" "}
             <a href={SITE.linkedin}>linkedin</a> ·{" "}
-            <a href={`mailto:${SITE.email}`}>email</a>
+            <a href={SITE.x}>x</a> · <a href={`mailto:${SITE.email}`}>email</a>
           </p>
         </div>
         <PlaneSlot />
@@ -26,7 +28,7 @@ export default function HomePage() {
       <Reveal as="section" index={1}>
         <h2>About</h2>
         <p>
-          Hey, I'm Brendan. I'm an AI backend engineer at Cisco, building the
+          Hey, I'm Brendan. I'm an AI full-stack engineer at Cisco, building the
           semantic router behind <a href={SITE.ciscoIqArticle}>Cisco IQ</a> and
           the evals that keep its 10+ agents routing well. Before that, three
           years at <a href="https://foreflight.com">ForeFlight</a> (a Boeing
@@ -89,6 +91,9 @@ export default function HomePage() {
         </p>
         <p className="contact-line">
           <b>LinkedIn:</b> <a href={SITE.linkedin}>brendan-potter00</a>
+        </p>
+        <p className="contact-line">
+          <b>X:</b> <a href={SITE.x}>brendanpotter00</a>
         </p>
         <p className="contact-line">
           <b>Location:</b> {SITE.location}
